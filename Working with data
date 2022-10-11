@@ -41,3 +41,10 @@ new_name.pivot_table(index=‘aaaaa‘, aggfunc=‘sum‘) # all values will be 
 or
 new_name.pivot_table(index=‘aaaaa‘,values= [‘name1‘, name2‘], aggfunc=‘sum‘) # selected values will be shown 
 
+
+# Lineplot
+df_pivot.plot(kind='line',
+              xlabel='Name1', ylabel='Name2',
+              title='Title',
+              figsize=(8,4))
+
