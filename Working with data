@@ -1,0 +1,43 @@
+#import data from excel file which is already in visual studio
+import pandas as pd
+excel_file = 'Name.xlsx'
+
+df = pd.read_excel(excel_file)
+print (df)
+
+#if csv file
+pd.read_csv(‘name.csv’) 
+
+
+#how to import data from excel (which is in a computer) to py and print first 20 lines. An example would be:
+import pandas as pd
+df = pd.read_excel (r'C:\Users\vgofe\Downloads\Financial Sample.xlsx', sheet_name='Sheet1') 
+print (df.head(20))
+
+
+#print particular column name
+print(df['Column name'])
+# show two columns
+df[['Column name1', 'Column name2']]
+
+# easier calculation with describe:
+print(df.describe())
+
+#add column 'Final', then use the 50 per cent discount form the column 'Price' and sort column 'Price'
+df['Final'] = df['Price'] / 2 
+print(df.sort_values(by="Price"))
+
+# pivot table method_if csv file
+pd.read_csv(‘name.csv’) 
+#read and show dataset
+new_name =pd.read_csv(‘name.csv’)
+ new_name.pivot(index=’aaaaa’, columnns=’bbb’,values=’ccc’)
+aggregate function: aggfunc=“sum“ 
+
+#pivot table method_if excel file
+pd.read_excel(‘name.xlsx’)
+new_name = pd.read_excel(‘name.xlsx’)
+new_name.pivot_table(index=‘aaaaa‘, aggfunc=‘sum‘) # all values will be shown
+or
+new_name.pivot_table(index=‘aaaaa‘,values= [‘name1‘, name2‘], aggfunc=‘sum‘) # selected values will be shown 
+
